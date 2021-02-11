@@ -5,5 +5,4 @@ function mySqrt(x: number): number {
     for(let i = start; i <= half + 1; i++) {
         if(i * i > x) return i - 1;
     }
-    
 };
