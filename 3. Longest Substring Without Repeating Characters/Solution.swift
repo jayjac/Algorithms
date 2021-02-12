@@ -25,11 +25,14 @@ class Solution {
             */
             if let repeatedCharacterIndex = indices[currentChar] {
                 //Removing the characters up until the new startIndex
-                for (char, index) in indices {
+                for i in startIndex...repeatedCharacterIndex {
+                    indices[stringArray[i]] = nil
+                }
+                /*for (char, index) in indices {
                     if index <= repeatedCharacterIndex {
                         indices[char] = nil
                     }
-                }
+                }*/
                 startIndex = repeatedCharacterIndex + 1
             } else {
                 longestSequence = max(longestSequence, thisLength)
@@ -42,7 +45,5 @@ class Solution {
         }
        return longestSequence
     }
-
-
 
 }
