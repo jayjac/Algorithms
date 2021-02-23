@@ -46,8 +46,6 @@ function numDecodings(s: string): number {
     const { previous, beforePrevious } = numDecodingsRecursive(s, i, previousWays, beforePreviousWays);
     if(!previous) return 0;
 
-    //console.log('Previous is %d for %s', previous, s.charAt(i));
-
     previousWays = previous;
     beforePreviousWays = beforePrevious;
   }
